@@ -37,7 +37,7 @@ function formatDue(due: string): string {
   return `Due in ${Math.floor(diffDays / 30)} months`;
 }
 
-function CardItem({ card }: { card: Card }) {
+function CardItem({ card }: { card: Card }): React.JSX.Element {
   const [isExpanded, setIsExpanded] = useState(false);
   const stateInfo = getStateLabel(card.state);
   const isDue = new Date(card.due) <= new Date();
@@ -108,7 +108,7 @@ function CardItem({ card }: { card: Card }) {
   );
 }
 
-export function CardList({ cards }: CardListProps) {
+export function CardList({ cards }: CardListProps): React.JSX.Element {
   return (
     <div>
       <div className="mb-4 flex items-center justify-between">

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Brain, Loader2, ArrowLeft, Mail } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 
-export default function ForgotPasswordPage() {
+export default function ForgotPasswordPage(): React.JSX.Element {
   const [email, setEmail] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);

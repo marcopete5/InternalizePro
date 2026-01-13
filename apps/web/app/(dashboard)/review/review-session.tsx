@@ -14,7 +14,7 @@ interface ReviewSessionProps {
 
 type SessionState = 'reviewing' | 'complete';
 
-export function ReviewSession({ initialCards, deckId }: ReviewSessionProps) {
+export function ReviewSession({ initialCards, deckId }: ReviewSessionProps): React.JSX.Element | null {
   const [cards, setCards] = useState<Card[]>(initialCards);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
@@ -229,7 +229,7 @@ interface RatingButtonProps {
   shortcut: string;
 }
 
-function RatingButton({ label, interval, color, onClick, disabled, shortcut }: RatingButtonProps) {
+function RatingButton({ label, interval, color, onClick, disabled, shortcut }: RatingButtonProps): React.JSX.Element {
   const colorClasses = {
     red: 'bg-red-50 text-red-700 hover:bg-red-100 border-red-200',
     orange: 'bg-orange-50 text-orange-700 hover:bg-orange-100 border-orange-200',

@@ -3,7 +3,7 @@ import { getReviewStats, getDueCards, getNewCards, getDecksWithStats } from '@in
 import Link from 'next/link';
 import { BookOpen, Flame, Target, TrendingUp, Plus, Clock } from 'lucide-react';
 
-export default async function DashboardPage() {
+export default async function DashboardPage(): Promise<React.JSX.Element> {
   const supabase = await createClient();
 
   // Fetch all data in parallel
@@ -225,7 +225,7 @@ function StatCard({
   value: number | string;
   sublabel: string;
   color: 'primary' | 'orange' | 'green' | 'blue';
-}) {
+}): React.JSX.Element {
   const colorClasses = {
     primary: 'bg-primary-100 text-primary-600',
     orange: 'bg-orange-100 text-orange-600',

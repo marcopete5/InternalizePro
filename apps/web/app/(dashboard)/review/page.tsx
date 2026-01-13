@@ -8,7 +8,7 @@ interface ReviewPageProps {
   searchParams: Promise<{ deck?: string }>;
 }
 
-export default async function ReviewPage({ searchParams }: ReviewPageProps) {
+export default async function ReviewPage({ searchParams }: ReviewPageProps): Promise<React.JSX.Element> {
   const { deck: deckId } = await searchParams;
   const supabase = await createClient();
 

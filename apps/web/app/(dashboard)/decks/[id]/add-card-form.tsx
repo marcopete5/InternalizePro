@@ -8,7 +8,7 @@ interface AddCardFormProps {
   deckId: string;
 }
 
-export function AddCardForm({ deckId }: AddCardFormProps) {
+export function AddCardForm({ deckId }: AddCardFormProps): React.JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);

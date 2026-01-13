@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server';
 import { getDecksWithStats } from '@internalize/api-client';
 import { DeckCard } from './deck-card';
 
-export default async function DecksPage() {
+export default async function DecksPage(): Promise<React.JSX.Element> {
   const supabase = await createClient();
 
   // Check if user is authenticated

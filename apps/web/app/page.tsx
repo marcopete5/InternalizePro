@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Brain, Link2, Target, Sparkles } from 'lucide-react';
 
-export default function LandingPage() {
+export default function LandingPage(): React.JSX.Element {
   return (
     <div className="min-h-screen">
       {/* Header */}

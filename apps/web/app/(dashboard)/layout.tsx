@@ -7,7 +7,7 @@ export default async function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}): Promise<React.JSX.Element> {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
 
@@ -83,7 +83,7 @@ function NavLink({
   href: string;
   icon: typeof LayoutGrid;
   children: React.ReactNode;
-}) {
+}): React.JSX.Element {
   return (
     <Link
       href={href}

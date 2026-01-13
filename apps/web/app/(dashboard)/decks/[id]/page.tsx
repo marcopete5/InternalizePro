@@ -10,7 +10,7 @@ interface DeckPageProps {
   params: Promise<{ id: string }>;
 }
 
-export default async function DeckPage({ params }: DeckPageProps) {
+export default async function DeckPage({ params }: DeckPageProps): Promise<React.JSX.Element> {
   const { id } = await params;
   const supabase = await createClient();
 

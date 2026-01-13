@@ -6,7 +6,7 @@ interface DeckCardProps {
   deck: DeckWithStats;
 }
 
-export function DeckCard({ deck }: DeckCardProps) {
+export function DeckCard({ deck }: DeckCardProps): React.JSX.Element {
   const totalCards = deck.cardCount;
   const hasDueCards = deck.dueCount > 0;
 

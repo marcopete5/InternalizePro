@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { Brain, Loader2 } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 
-export default function SignupPage() {
+export default function SignupPage(): React.JSX.Element {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');

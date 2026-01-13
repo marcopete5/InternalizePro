@@ -19,7 +19,7 @@ const COLORS = [
   '#6b7280', // Gray
 ];
 
-export default function NewDeckPage() {
+export default function NewDeckPage(): React.JSX.Element {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);

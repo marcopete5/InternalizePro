@@ -1,4 +1,4 @@
-export default function SettingsPage() {
+export default function SettingsPage(): React.JSX.Element {
   return (
     <div>
       <div>
