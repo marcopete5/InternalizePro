@@ -6,6 +6,7 @@ import { getDeck, getCardsByDeck, getDueCards } from '@internalize/api-client';
 import { CardList } from './card-list';
 import { AddCardForm } from './add-card-form';
 import { DeckActionsMenu } from './deck-actions-menu';
+import { ImportCardsButton } from './import-cards/import-cards-button';
 
 interface DeckPageProps {
   params: Promise<{ id: string }>;
@@ -55,6 +56,7 @@ export default async function DeckPage({ params }: DeckPageProps): Promise<React
           </div>
 
           <div className="flex items-center gap-3">
+            <ImportCardsButton deckId={deck.id} />
             {dueCount > 0 && (
               <Link
                 href={`/review?deck=${deck.id}`}
