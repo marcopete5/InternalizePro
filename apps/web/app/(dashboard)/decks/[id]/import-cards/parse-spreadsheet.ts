@@ -19,6 +19,10 @@ export function parseSpreadsheet(
   }
 
   const sheet = workbook.Sheets[sheetName];
+  if (!sheet) {
+    return { cards: [], errors: [{ rowNumber: 0, message: 'Could not read sheet' }], totalRows: 0 };
+  }
+
   const jsonData = XLSX.utils.sheet_to_json<string[]>(sheet, {
     header: 1,
     defval: '',
