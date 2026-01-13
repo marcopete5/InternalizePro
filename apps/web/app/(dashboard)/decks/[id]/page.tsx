@@ -1,10 +1,11 @@
-import { ArrowLeft, Plus, Play, MoreHorizontal } from 'lucide-react';
+import { ArrowLeft, Plus, Play } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import { getDeck, getCardsByDeck, getDueCards } from '@internalize/api-client';
 import { CardList } from './card-list';
 import { AddCardForm } from './add-card-form';
+import { DeckActionsMenu } from './deck-actions-menu';
 
 interface DeckPageProps {
   params: Promise<{ id: string }>;
@@ -63,9 +64,7 @@ export default async function DeckPage({ params }: DeckPageProps): Promise<React
                 Study ({dueCount} due)
               </Link>
             )}
-            <button className="rounded-lg border border-gray-300 p-2 text-gray-600 hover:bg-gray-50">
-              <MoreHorizontal className="h-5 w-5" />
-            </button>
+            <DeckActionsMenu deckId={deck.id} deckName={deck.name} />
           </div>
         </div>
 
